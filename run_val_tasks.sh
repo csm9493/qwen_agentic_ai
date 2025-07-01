@@ -31,7 +31,7 @@ jq -c '.[]' "$JSON_FILE" | while IFS= read -r line; do
     # Set the output filename using the index counter.
     OUTPUT_FILE="./trajectories/output_${INDEX}.json"
 
-    echo "🚀 Starting task #${INDEX}: ${TASK}"
+    echo "Starting task #${INDEX}: ${TASK}"
     echo "   - URL: ${URL}"
     echo "   - Output File: ${OUTPUT_FILE}"
 
@@ -45,7 +45,7 @@ jq -c '.[]' "$JSON_FILE" | while IFS= read -r line; do
         --max-steps "$MAX_STEPS" \
         --output "$OUTPUT_FILE"
 
-    echo "✅ Task finished. Results saved to ${OUTPUT_FILE}."
+    echo "Task finished. Results saved to ${OUTPUT_FILE}."
     echo "----------------------------------------------------"
     
     # --- [FIX] ---
@@ -55,4 +55,4 @@ jq -c '.[]' "$JSON_FILE" | while IFS= read -r line; do
     sleep 30 # Brief pause before starting the next task.
 done
 
-echo "🎉 All tasks have been completed."
+echo "All tasks have been completed."
