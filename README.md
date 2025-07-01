@@ -6,7 +6,7 @@ This project implements a web agent that uses the **Qwen2.5-VL-72B-Instruct** mo
 
 ## Overview
 
-[cite\_start]The goal of this project is to create a web agent capable of performing real-world tasks on various websites. [cite: 3] [cite\_start]The agent operates in a loop: it captures a screenshot of the current webpage, sends it to the Qwen2.5-VL model to determine the next action, and then executes that action on the page. [cite: 5, 6, 7, 8, 9]
+The goal of this project is to create a web agent capable of performing real-world tasks on various websites. The agent operates in a loop: it captures a screenshot of the current webpage, sends it to the Qwen2.5-VL model to determine the next action, and then executes that action on the page. 
 
 The core of the agent is `qwen_agent_final.py`, which manages the browser interaction, communication with the Qwen-VL model, and execution of actions.
 
@@ -16,21 +16,21 @@ The core of the agent is `qwen_agent_final.py`, which manages the browser intera
 
 To run the agent, you'll need to set up a Conda environment with Python 3.11 and install the required packages.
 
-1.  [cite\_start]**Create and activate the Conda environment:** [cite: 50, 51]
+1.  **Create and activate the Conda environment:** 
 
     ```bash
     conda create -n qwenvl_agent python=3.11
     conda activate qwenvl_agent
     ```
 
-2.  [cite\_start]**Install the necessary Python packages:** [cite: 53]
+2.  **Install the necessary Python packages:** 
 
     ```bash
     pip install playwright
     pip install openai
     ```
 
-3.  [cite\_start]**Install Playwright's browser dependencies:** [cite: 53]
+3.  **Install Playwright's browser dependencies:** 
 
     ```bash
     playwright install
@@ -78,4 +78,3 @@ This script will sequentially execute each task defined in `val_tasks.json`, pau
   * `run.sh`: A shell script for running a single inference task.
   * `run_val_tasks.sh`: A shell script for running all validation tasks from `val_tasks.json`.
   * `val_tasks.json`: A JSON file containing the URLs and task descriptions for the validation set.
-  * [cite\_start]`Mini Project.pdf`: The project description document. [cite: 1]
