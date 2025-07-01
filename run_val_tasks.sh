@@ -14,7 +14,6 @@ if [ ! -f "$JSON_FILE" ]; then
     exit 1
 fi
 
-# --- [FIX] ---
 # Initialize a counter for indexed output file naming.
 INDEX=0
 
@@ -27,7 +26,6 @@ jq -c '.[]' "$JSON_FILE" | while IFS= read -r line; do
     URL=$(echo "$line" | jq -r '.url')
     TASK=$(echo "$line" | jq -r '.task')
 
-    # --- [FIX] ---
     # Set the output filename using the index counter.
     OUTPUT_FILE="./trajectories/output_${INDEX}.json"
 
@@ -47,8 +45,7 @@ jq -c '.[]' "$JSON_FILE" | while IFS= read -r line; do
 
     echo "Task finished. Results saved to ${OUTPUT_FILE}."
     echo "----------------------------------------------------"
-    
-    # --- [FIX] ---
+
     # Increment the counter for the next loop iteration.
     INDEX=$((INDEX + 1))
     
